@@ -98,7 +98,7 @@ def main():
 
     # Convert results to a DataFrame and save to CSV
     df = pd.DataFrame(all_results)
-    df.to_csv('results.csv', index=False)
+    df.to_csv('results_dorking.csv', index=False)
 
 if __name__ == "__main__":
     main()
