@@ -1,0 +1,5 @@
+katakunci.txt: 
+
+https://catonmat.net/tools/generate-random-names
+https://pinetools.com/random-string-generator
+https://ahrefs.com/keyword-generator

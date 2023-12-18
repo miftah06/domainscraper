@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="domainscraper">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/domainscraper.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

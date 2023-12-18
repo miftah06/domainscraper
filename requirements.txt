@@ -1,0 +1,9 @@
+beautifulsoup4
+pandas
+Requests
+google
+Tornado
+Pillow
+Numpy
+selenium
+webdriver_manager
