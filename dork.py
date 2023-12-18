@@ -98,7 +98,7 @@ def scrape_domain_google(keyword):
     return results
 
 def main():
-    file_path_keywords = 'katakunci.txt'
+    file_path_keywords = 'domain.txt'
     file_path_domains = 'input.txt'
 
     keywords = get_keywords_from_file(file_path_keywords)
@@ -119,7 +119,7 @@ def main():
     df.to_csv('results_dorking.csv', index=False)
 
 def async_main():
-    file_path_keywords = 'katakunci.txt'
+    file_path_keywords = 'domain.txt'
     file_path_domains = 'input.txt'
 
     keywords = get_keywords_from_file(file_path_keywords)
