@@ -26,15 +26,6 @@ def get_keywords_from_file(file_path):
         print(f"File not found: {file_path}")
         return []
 
-def get_domain_suffixes(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'r', encoding='utf-8', errors='replace') as file:
-            domain_suffixes = file.read().splitlines()
-        return domain_suffixes
-    else:
-        print(f"File not found: {file_path}")
-        return []
-
 def extract_domain(url):
     try:
         domain = url.split('//')[1].split('/')[0]
@@ -68,12 +59,12 @@ def scrape_atsameip(url, keyword):
             return result
     return None
 
-def scrape_domain(keyword, domain_suffix):
+def scrape_domain(keyword):
     print(f"Searching for: {keyword}")
     results = []
     count = 0
 
-    bing_search_url = f"https://www.bing.com/search?q={keyword} {domain_suffix}"
+    bing_search_url = f"https://www.bing.com/search?q={keyword}"
 
     try:
         html_content = fetch_url(bing_search_url)
@@ -98,22 +89,18 @@ def scrape_domain(keyword, domain_suffix):
 
 def main():
     file_path_keywords = 'katakunci.txt'
-    file_path_input = 'input.txt'
     all_results = []
     all_domains = set()
 
     keywords = get_keywords_from_file(file_path_keywords)
-    domain_suffixes = get_domain_suffixes(file_path_input)
 
     for keyword in keywords:
-        for domain_suffix in domain_suffixes:
-            keyword_with_extension = f"{keyword} {domain_suffix}"
-            results = scrape_domain(keyword_with_extension, domain_suffix)
-            all_results.extend(results)
-            for result in results:
-                domain = result.get('Domain')
-                if domain:
-                    all_domains.add(domain)
+        results = scrape_domain(keyword)
+        all_results.extend(results)
+        for result in results:
+            domain = result.get('Domain')
+            if domain:
+                all_domains.add(domain)
 
     # Save domains to domains.txt
     with open('domains.txt', 'w', encoding='utf-8') as domains_file:
@@ -122,7 +109,7 @@ def main():
 
     # Convert results to a DataFrame and save to CSV
     df = pd.DataFrame(all_results)
-    df.to_csv('results_dork.csv', index=False)
+    df.to_csv('results.csv', index=False)
 
 if __name__ == "__main__":
     main()
