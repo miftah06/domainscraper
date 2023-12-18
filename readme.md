@@ -12,6 +12,13 @@
 - Sniffio
 
 ### Instalasi untuk domain.py
+1. Copy repo ini ke folder baru:
+   ```bash
+    git clone https://github.com/miftah06/domainscraper.git
+   cd domainscraper
+	```
+
+### Instalasi untuk domain.py
 1. Install dependencies using pip:
    ```bash
    pkg install python3
