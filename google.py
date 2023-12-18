@@ -54,17 +54,22 @@ def scrape_atsameip(url, keyword):
 
         if html_content:
             soup = BeautifulSoup(html_content, 'html.parser')
-            title = soup.title.text
-            print(f"Domain: {domain} | Title: {title}")
 
-            # Save the result to results.csv
-            result = {
-                'Keyword': keyword,
-                'URL': url,
-                'Domain': domain,
-                'Title': title
-            }
-            return result
+            # Check if title tag exists
+            title_tag = soup.title
+            if title_tag:
+                title = title_tag.text
+                print(f"Domain: {domain} | Title: {title}")
+
+                # Save the result to results.csv
+                result = {
+                    'Keyword': keyword,
+                    'URL': url,
+                    'Domain': domain,
+                    'Title': title
+                }
+                return result
+
     return None
 
 def scrape_domain(keyword):
