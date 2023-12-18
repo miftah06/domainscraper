@@ -19,9 +19,9 @@
 	```
 2. Untuk google.py isi kuncikata dan katakunci dengan dorking belakang dan depannya
 
-3. untuk domain.py cukup isi katakunci.txt saja dengan keyowrdnya
+3. untuk domain.py cukup isi katakunci.txt saja dengan keywordnya
 
-4. untuk dork.py cukup isi katakunci dan input.txt biarkan saja
+4. untuk dork.py cukup isi katakunci dan domain.txt dengan nama nama domainnya saja, input.txt biarkan saja
 
 ### Instalasi untuk domain.py
 1. Install dependencies using pip:
