@@ -57,7 +57,14 @@ pip install Appium-Python-Client==0.45
 python3 termux.py
 ```
 
-### Ganti hal ini
+##### Untuk Hasil atau output nya
+```bash
+mv ouput.csv hasil.csv
+nano output.csv
+  ```
+-- lalu isi dengan tanda pagar (#) lalu exit
+
+### Ganti hal ini pada script termux.py
 --- 
 from appium import webdriver
 
