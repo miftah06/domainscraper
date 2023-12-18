@@ -84,7 +84,7 @@ def scrape_domain(keyword):
             results.append(result)
             count += 1
 
-        if count >= 5:
+        if count >= 10:
             break
 
         # Introduce a delay to avoid sending requests too quickly
