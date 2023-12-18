@@ -1,4 +1,1 @@
-.com
-.net
-.xyz
-.id
+ 30 day

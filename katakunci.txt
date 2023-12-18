@@ -1,1 +1,1 @@
-free ssh websocket 30 day
+free ssh websocket
