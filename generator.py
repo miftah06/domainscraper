@@ -16,7 +16,7 @@ def save_to_file(subdomains, file_path="domain.txt"):
             file.write(f"{domain}\n")
 
 if __name__ == "__main__":
-    num_subdomains = 1000  # Ganti dengan jumlah subdomain yang diinginkan
+    num_subdomains = 10  # Ganti dengan jumlah subdomain yang diinginkan
     subdomains = generate_random_subdomains(num_subdomains)
     save_to_file(subdomains)
     print(f"{num_subdomains} subdomains telah disimpan dalam domain.txt")
