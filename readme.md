@@ -30,7 +30,8 @@
 	
 #### Penggunaan untuk melakukan Dorking
 #### Penggunaan untuk melakukan google.py
-1. -- untuk GOOGLE tolong cantumkan 1 saja kata kunci dan input.txt secukupnya agar tidak terkena ban
+1. -- untuk GOOGLE tolong cantumkan 1 saja kata kunci dan 1 eketensi domain pada input.txt secukupnya agar tidak terkena ban
+
 
 2. Menjalankan skrip dengan google:
 ```bash
