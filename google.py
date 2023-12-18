@@ -61,7 +61,7 @@ def scrape_atsameip(url, keyword):
                 title = title_tag.text
                 print(f"Domain: {domain} | Title: {title}")
 
-                # Save the result to results.csv
+                # Save the result to results_google.csv
                 result = {
                     'Keyword': keyword,
                     'URL': url,
@@ -111,7 +111,7 @@ def main():
 
     # Convert results to a DataFrame and save to CSV
     df = pd.DataFrame(all_results)
-    df.to_csv('results.csv', index=False)
+    df.to_csv('results_google.csv', index=False)
 
 def async_main():
     file_path_keywords = 'katakunci.txt'
@@ -131,7 +131,7 @@ def async_main():
 
     # Convert results to a DataFrame and save to CSV
     df = pd.DataFrame(all_results)
-    df.to_csv('results.csv', index=False)
+    df.to_csv('results_google.csv', index=False)
 
 if __name__ == "__main__":
     main()
