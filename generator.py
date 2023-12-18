@@ -12,7 +12,7 @@ def generate_random_subdomains(num_subdomains):
 def save_to_file(subdomains, file_path="domain.txt"):
     with open(file_path, 'w') as file:
         for subdomain in subdomains:
-            domain = f"{subdomain}.com"  # Ganti dengan ekstensi domain yang diinginkan
+            domain = f"{subdomain}"  # Ganti dengan ekstensi domain yang diinginkan
             file.write(f"{domain}\n")
 
 if __name__ == "__main__":
