@@ -37,9 +37,6 @@ def extract_domain(url):
 def scrape_atsameip(url, keyword):
     domain = extract_domain(url)
     if domain:
-        if domain.lower() == 'yahoo.com':
-            return None
-
         base_url = f"https://www.isitdownrightnow.com/{domain}.html"
         html_content = fetch_url(base_url)
 
@@ -65,47 +62,39 @@ def scrape_domain(keyword):
     count = 0
 
     bing_search_url = f"https://www.bing.com/search?q={keyword}"
+    yahoo_search_url = f"https://search.yahoo.com/search?p={keyword}"
 
-    try:
-        html_content = fetch_url(bing_search_url)
-        if html_content:
-            soup = BeautifulSoup(html_content.text, 'html.parser')
-            search_results = soup.select('h2 a[href^="http"]')
+    for search_url in [bing_search_url, yahoo_search_url]:
+        try:
+            html_content = fetch_url(search_url)
+            if html_content:
+                soup = BeautifulSoup(html_content.text, 'html.parser')
+                search_results = soup.select('h2 a[href^="http"]')
 
-            for result in search_results:
-                url = result['href']
-                print(f"Found URL: {url}")
-                scraped_result = scrape_atsameip(url, keyword)
-                if scraped_result:
-                    results.append(scraped_result)
-                    count += 1
+                for result in search_results:
+                    url = result['href']
+                    print(f"Found URL: {url}")
+                    scraped_result = scrape_atsameip(url, keyword)
+                    if scraped_result:
+                        results.append(scraped_result)
+                        count += 1
 
-                if count >= 5:
-                    break
-    except Exception as e:
-        print(f"Error during scraping: {e}")
+                    if count >= 5:
+                        break
+        except Exception as e:
+            print(f"Error during scraping: {e}")
 
     return results
 
 def main():
     file_path_keywords = 'katakunci.txt'
     all_results = []
-    all_domains = set()
 
     keywords = get_keywords_from_file(file_path_keywords)
 
     for keyword in keywords:
         results = scrape_domain(keyword)
         all_results.extend(results)
-        for result in results:
-            domain = result.get('Domain')
-            if domain:
-                all_domains.add(domain)
-
-    # Save domains to domains.txt
-    with open('domains.txt', 'w', encoding='utf-8') as domains_file:
-        for domain in all_domains:
-            domains_file.write(f"{domain}\n")
 
     # Convert results to a DataFrame and save to CSV
     df = pd.DataFrame(all_results)
