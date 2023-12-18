@@ -1,1 +1,3 @@
-free ssh websocket
+free ssh websocket 
+free ssh 30day 
+

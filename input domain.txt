@@ -2,7 +2,9 @@
 .net
 .org
 .co.id
-.info
-.co
 .xyz
 .id
+.info
+.co
+.nz
+.ua
