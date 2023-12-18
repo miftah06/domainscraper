@@ -95,7 +95,7 @@ def scrape_domain(keyword):
 
 def main():
     file_path_keywords = 'katakunci.txt'
-    file_path_domains = 'input.txt'
+    file_path_domains = 'kuncikata.txt'
 
     keywords = get_keywords_from_file(file_path_keywords)
     all_results = []
@@ -115,7 +115,7 @@ def main():
 
 def async_main():
     file_path_keywords = 'katakunci.txt'
-    file_path_domains = 'input.txt'
+    file_path_domains = 'kuncikata.txt'
 
     keywords = get_keywords_from_file(file_path_keywords)
     all_results = []
