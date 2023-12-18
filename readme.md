@@ -17,6 +17,11 @@
     git clone https://github.com/miftah06/domainscraper.git
    cd domainscraper
 	```
+2. Untuk google.py isi kuncikata dan katakunci dengan dorking belakang dan depannya
+
+3. untuk domain.py cukup isi katakunci.txt saja dengan keyowrdnya
+
+4. untuk dork.py cukup isi katakunci dan input.txt biarkan saja
 
 ### Instalasi untuk domain.py
 1. Install dependencies using pip:
@@ -43,6 +48,7 @@ python3 google.py
 1. Menjalankan skrip dengan bing dan yahoo:
 ```bash
 pip install -r requirements.txt
+python3 generator.py
 python3 dork.py
   ```
 
