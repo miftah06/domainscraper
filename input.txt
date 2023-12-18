@@ -1,8 +1,4 @@
 .com
 .net
-.org
-.co.id
-.info
-.co
 .xyz
 .id
