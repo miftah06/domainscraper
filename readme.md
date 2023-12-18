@@ -11,7 +11,7 @@
 - Numpy
 - Sniffio
 
-### Instalasi untuk domain.py
+### Pasang project
 1. Copy repo ini ke folder baru:
    ```bash
     git clone https://github.com/miftah06/domainscraper.git
