@@ -2,7 +2,7 @@
 .net
 .org
 .co.id
-.ifo
+.info
 .co
 .xyz
 .id
